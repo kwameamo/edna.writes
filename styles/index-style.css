@@ -1,0 +1,258 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgb(29 30 33);
+
+}
+
+body {
+    font-family: 'Ultra', serif;    
+    background-color: #B27BDD;
+    color: #F9F9F9;
+    margin: 0;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    line-height: 2;
+
+}
+
+input, select, textarea, a {
+    font-family: 'Spline Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 2.14286;
+    color: #0e1010;
+    word-wrap: break-word;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.header-wrapper {
+    padding-top: 3em;
+    width: 50%;
+    line-height: normal;
+}
+
+header img {
+    width: 100px;
+    height: auto;
+}
+
+.login-branding {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navigation, ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+
+    padding: 1em 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+
+}
+
+ul a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #aabebe;
+}
+
+ul a:hover {
+    text-decoration: underline;
+}
+
+ul .active a {
+    text-decoration: underline;
+    color: #0e1010;
+}
+
+.navigation button {
+    display: flex;
+    align-items: center;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.main-content {
+    /* padding: 2em 0; */
+    width: 50%;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 17px;
+    text-align: justify;
+}
+
+.main-content p {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+/* This style will add a slight delay for each paragraph */
+.main-content p:nth-child(odd) {
+    transition-delay: 0.5s;
+}
+
+.main-content p:nth-child(even) {
+    transition-delay: 1s;
+}
+
+.main-button {
+    padding: 2em 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    font-family: 'Ultra', serif;
+    text-align: center;
+    font-size: medium;
+    background-color: #FBFD81;
+    border-radius: 10px;
+    border: 3px solid #1E1E1E;
+    padding: 5px 10px;
+    flex-shrink: 0;
+}
+
+button:hover {
+    background-color: #B27BDD;
+    cursor: pointer;
+}
+
+
+h1 {
+    /* font-family: 'Quicksand', sans-serif;     */
+    font-family: 'Ultra', serif;
+    text-align: center;
+    font-size: 80px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 0 auto;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: small;
+    text-align: center;
+    color: #1E1E1E;
+
+    background-color: #FBFD81;
+    border: 2px solid #1E1E1E;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 0;
+
+    padding: 10px 0;
+    position: sticky;
+    bottom: 0;
+}
+
+footer img {
+    width: 80px;
+    height: auto;
+    padding: 0 1em;
+}
+
+
+/* Add a media query for screens up to 1024px */
+@media (max-width: 1024px) {
+    .header-wrapper {
+        width: 50%;
+    }
+
+    h1 {
+        font-size: 64px;
+    }
+
+    .main-content {
+        width: 50%;
+    }
+
+    footer {
+        width: 70%;
+    }
+}
+
+/* Add a media query for screens up to 768px */
+@media (max-width: 768px) {
+    .header-wrapper {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 64px;
+    }
+
+    .main-content {
+        width: 90%;
+    }
+
+    footer {
+        width: 100%;
+    }
+}
+
+/* Add a media query for screens up to 480px */
+@media (max-width: 480px) {
+    .header-wrapper {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 41px;
+    }
+
+    .main-content {
+        width: 90%;
+        font-size: 15px;
+    }
+
+    footer {
+        width: 100%;
+    }
+}
+
+/* Add a media query for screens up to 320px */
+@media (max-width: 320px) {
+    .header-wrapper {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    .main-content {
+        width: 90%;
+        font-size: 15px;
+    }
+
+    footer {
+        width: 100%;
+    }
+}

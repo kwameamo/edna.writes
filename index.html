@@ -4,19 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://api.fontshare.com/v2/css?f[]=spline-sans@300,400,600,700,500,1&f[]=quicksand@600,700,400,300,500,1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/index-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=plus-jakarta-sans@800,801,201,401,301,501,400,601,500,600,700,701,300,200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="shortcut icon" href="images/edna-logo.png">
     <link rel="apple-touch-icon" href="images/edna-logo.png" sizes="72x72">
     <link rel="apple-touch-icon" href="images/edna-logo.png">
-    <title>Edna's Diary</title>
+    <title>Edna Writes</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const yearSpan = document.querySelector(".year");
+            const currentYear = new Date().getFullYear();
+            yearSpan.textContent = currentYear;
+        });
+    </script>
 </head>
 <body>
     
     <header>
         
         <div class="header-wrapper">
-            <div class="branding">
+            <!-- <div class="branding">
                 <a href="index.html">
                     <img src="images/edna-type.svg" alt="Efua LogoType" class="logo">
                 </a>
@@ -28,12 +39,17 @@
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact.html">Reach Me</a></li>
                 </ul>
-            </div>
+            </div> -->
+            <h1>HI, I'M EDNA</h1>
+            <h1>AND I WRITE</h1>
         </div>
 
     </header>
 
     <div class="main">
+        <div class="main-button">
+            <button class="footer-button"><i class="fas fa-book"></i> READ</button>
+        </div>
         <div class="main-content">
             <p>
                 Comfort "Edna" Nyamesi is a dedicated and ambitious student, currently in her final year at the University of Cape Coast where she is studying Biomedical Sciences. With a passion for science and a desire to make a positive impact on the world, Edna has thrown herself into her studies and is determined to succeed.
@@ -48,7 +64,43 @@
             </p>
 
         </div>
+        <div class="main-button">
+            <button class="footer-button"><i class="fas fa-envelope"></i> CONTACT</button>
+        </div>
     </div>
-
+    
 </body>
+
+
+<script>
+    // This script is optional and handles the fading-in effect on scroll
+    document.addEventListener("DOMContentLoaded", function() {
+        const paragraphs = document.querySelectorAll(".main-content p");
+        const options = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.3
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                }
+            });
+        }, options);
+
+        paragraphs.forEach(paragraph => {
+            observer.observe(paragraph);
+        });
+    });
+</script>
+<footer>
+    <div class="copyright">
+        &copy; <span class="year"></span>
+        <img src="images/edna-type.svg" alt="Efua LogoType" class="logo">
+        All Rights Reserved.
+    </div>
+</footer>
+
 </html>
