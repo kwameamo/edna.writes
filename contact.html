@@ -4,46 +4,114 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://api.fontshare.com/v2/css?f[]=spline-sans@300,400,600,700,500,1&f[]=quicksand@600,700,400,300,500,1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/index-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=plus-jakarta-sans@800,801,201,401,301,501,400,601,500,600,700,701,300,200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="shortcut icon" href="images/edna-logo.png">
     <link rel="apple-touch-icon" href="images/edna-logo.png" sizes="72x72">
     <link rel="apple-touch-icon" href="images/edna-logo.png">
-    <title>Reach Me — Edna's Diary</title>
+    <title>Edna Writes</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const yearSpan = document.querySelector(".year");
+            const currentYear = new Date().getFullYear();
+            yearSpan.textContent = currentYear;
+        });
+    </script>
 </head>
 <body>
     
     <header>
         
-        <div class="header-wrapper">
-            <div class="branding">
-                <a href="index.html">
-                    <img src="images/edna-type.svg" alt="Efua LogoType" class="logo">
-                </a>            
-            </div>
-    
-            <div class="navigation">
-                <ul>
-                    <li><a href="index.html">About</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li class="active"><a href="contact.html">Reach Me</a></li>
-                </ul>
-            </div>
+        <div class="header-wrapper-two">
+            <h1>CONTACT</h1>
+            <a href="index.html"><button class="footer-button"><i class="fas fa-home"></i> HOME</button></a>
         </div>
 
     </header>
 
     <div class="main">
-        <div class="main-content">
-            
-            <h1>
-                <a class="mail" href="mailto:ednacomfort9@gmail.com">
-                    ednacomfort9@gmail.com
-                </a>
-            </h1>
-
+        <div class="main-content" id="contact-content">
+            Let words be the bridge between our worlds. <br>
+            I eagerly await your thoughts, inquiries, or tales you wish to share. <br> 
+            Together, we'll ink stories that dance across the pages and resonate with hearts. <br> 
+            Feel free to connect with me on various platforms:
+            <br>
+            <br>            
+            <button class="footer-button">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:contact@nyamesi.blog">Email</a>
+            </button>
+            <button class="footer-button">
+                <i class="fas fa-globe"></i>
+                <a href="http://www.nyamesi.blog">Website</a>
+            </button>
+            <br>
+            <br>
+            <button class="footer-button">
+                <i class="fab fa-twitter"></i>
+                <a href="https://twitter.com/YourTwitterHandle">Twitter</a>
+            </button>
+            <button class="footer-button">
+                <i class="fab fa-instagram"></i>
+                <a href="https://www.instagram.com/YourInstagramHandle/">Instagram</a>
+            </button>
+            <br>
+            <br>
+            <button class="footer-button">
+                <i class="fab fa-linkedin"></i>
+                <a href="https://www.linkedin.com/in/YourLinkedInProfile/">LinkedIn</a>
+            </button>
+            <button class="footer-button">
+                <i class="fab fa-medium"></i>
+                <a href="https://medium.com/@YourMediumProfile">Medium</a>
+            </button>
+            <button class="footer-button">
+                <i class="fab fa-facebook"></i>
+                <a href="https://www.facebook.com/YourFacebookPage">Facebook</a>
+            </button>
+            <br>
+            <br>
+            Feel free to explore more of my universe on social media, where stories unfold and conversations spark. <br> 
+            Let's paint our own canvas of words and let them resonate through the digital tapestry of human connection.<br>
         </div>
     </div>
-
+    
 </body>
+
+
+<script>
+    // This script is optional and handles the fading-in effect on scroll
+    document.addEventListener("DOMContentLoaded", function() {
+        const paragraphs = document.querySelectorAll(".main-content p");
+        const options = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.3
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                }
+            });
+        }, options);
+
+        paragraphs.forEach(paragraph => {
+            observer.observe(paragraph);
+        });
+    });
+</script>
+<footer>
+    <div class="copyright">
+        &copy; <span class="year"></span>
+        <img src="images/edna-type.svg" alt="Efua LogoType" class="logo">
+        All Rights Reserved.
+    </div>
+</footer>
+
 </html>

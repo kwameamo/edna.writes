@@ -49,6 +49,21 @@ header img {
     height: auto;
 }
 
+.header-wrapper-two {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+
+#blog-view-controller {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+
+
 .login-branding {
     display: flex;
     flex-direction: column;
@@ -105,6 +120,43 @@ ul .active a {
     text-align: justify;
 }
 
+#blog-content {
+    background-color: #FBFD81;
+    border: 3px solid #1E1E1E;
+    color: #1E1E1E;
+    padding: 2em;
+    overflow: scroll;
+    max-height: 500px;
+    overflow-y: auto; 
+}
+
+.blog-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-family: 'Ultra', serif;   
+    
+    position: sticky;
+    top: 0;
+    background-color: #FBFD81; /* Add a background color to separate from content */
+    padding: 10px 0;
+    z-index: 1; /* Ensure it's above the scrolling content */
+}
+
+.blog-title {
+    font-size: x-large;
+}
+
+.blog-date {
+    font-size: medium;
+    text-decoration: underline;
+}
+
+.blog {
+    padding-top: 2em;
+}
+
 .main-content p {
     opacity: 0;
     transition: opacity 1s ease;
@@ -136,14 +188,28 @@ button {
     flex-shrink: 0;
 }
 
+button a {
+    font-family: 'Ultra', serif;
+    font-size: medium;
+    text-decoration: none;
+}
+
 button:hover {
     background-color: #B27BDD;
     cursor: pointer;
 }
 
+#contact-content {
+    font-family: 'Ultra', serif;
+    text-align: justify;
+    font-size: 20px;
+    line-height: normal;
+    color: #1E1E1E;
+    padding-bottom: 2em;
+}
+
 
 h1 {
-    /* font-family: 'Quicksand', sans-serif;     */
     font-family: 'Ultra', serif;
     text-align: center;
     font-size: 80px;
