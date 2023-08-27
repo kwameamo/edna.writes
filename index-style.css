@@ -7,7 +7,7 @@
 html {
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgb(29 30 33);
-
+    cursor: url('/images/quill-drawing-a-line.png') 0 0, auto;
 }
 
 body {
@@ -18,7 +18,6 @@ body {
     overflow-x: hidden;
     word-wrap: break-word;
     line-height: 2;
-
 }
 
 input, select, textarea, a {
@@ -150,12 +149,22 @@ ul .active a {
 
 .blog-date {
     font-size: medium;
-    text-decoration: underline;
 }
 
 .blog {
     padding-top: 2em;
 }
+
+#blog-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-bottom: 2em;
+
+}
+
 
 .main-content p {
     opacity: 0;
@@ -199,6 +208,10 @@ button:hover {
     cursor: pointer;
 }
 
+#read button:hover {
+    cursor: url('/images/reading.png') 0 0, auto;
+}
+
 #contact-content {
     font-family: 'Ultra', serif;
     text-align: justify;
@@ -213,6 +226,48 @@ h1 {
     font-family: 'Ultra', serif;
     text-align: center;
     font-size: 80px;
+}
+
+.list {
+    width: 48%;
+    background-color: #FBFD81;
+    border: 2px solid #1E1E1E;
+    padding: 3px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.list-image {
+    justify-content: center;
+}
+
+.list-image img {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    border: 2px solid #1E1E1E;
+    object-fit: cover;
+}
+
+.blog-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: 'Ultra', serif;
+    color: #1E1E1E;
+}
+
+.list-title {
+    font-size: 15px;
+}
+
+.list-date {
+    font-size: 13px;
 }
 
 footer {
@@ -232,6 +287,9 @@ footer {
     border: 2px solid #1E1E1E;
     border-radius: 10px 10px 0 0;
     border-bottom: 0;
+
+    /* backdrop-filter: blur(200px);  */
+    /* background-color: rgba(251, 253, 129, 0.8);  */
 
     padding: 10px 0;
     position: sticky;

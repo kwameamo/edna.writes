@@ -4,88 +4,121 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://api.fontshare.com/v2/css?f[]=spline-sans@300,400,600,700,500,1&f[]=quicksand@600,700,400,300,500,1&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="/index-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=plus-jakarta-sans@800,801,201,401,301,501,400,601,500,600,700,701,300,200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="shortcut icon" href="images/edna-logo.png">
     <link rel="apple-touch-icon" href="images/edna-logo.png" sizes="72x72">
     <link rel="apple-touch-icon" href="images/edna-logo.png">
-    <title>Blog — Edna's Diary</title>
+    <title>Edna Writes</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const yearSpan = document.querySelector(".year");
+            const currentYear = new Date().getFullYear();
+            yearSpan.textContent = currentYear;
+        });
+    </script>
 </head>
 <body>
     
     <header>
         
-        <div class="header-wrapper">
-            <div class="branding">
-                <a href="index.html">
-                    <img src="images/edna-type.svg" alt="Efua LogoType" class="logo">
-                </a>
-            </div>
-    
-            <div class="navigation">
-                <ul>
-                    <li><a href="index.html">About</a></li>
-                    <li class="active"><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Reach Me</a></li>
-                </ul>
-            </div>
+        <div class="header-wrapper-two">
+            <h1>BLOG</h1>
+            <a href="index.html"><button class="footer-button" id="home-sticky"><i class="fas fa-home"></i> HOME</button></a>
         </div>
 
     </header>
 
     <div class="main">
-        <div class="main-content">
-            <div class="blog-cards">
+        <div class="main-content" id="blog-list">
 
-                <!-- 1 -->
-                <a href="incidence.html">
-                    <div class="cards">
-                        <div class="info">
-                            <h1 class="title">Incidence</h1>
-                            <h1 class="sub-title">Sat, 05 Jun 2021</h1>
-                        </div>
+            <!-- 1 -->
+            <div class="list"> 
+                <div class="list-image">
+                    <img src="images/IMG_9793.jpeg" alt="Blog Image">
+                </div>
 
-                        <div class="photo">
-                            <img src="images/IMG_2064_Original.jpg" alt="">
-                        </div>
+                <div class="blog-details">
+                    <div class="titledate">
+                        <div class="list-title">The Forbidden Tongue</div>
                     </div>
-                </a>
-                <!-- 1 -->
-
-                <!-- 2 -->
-                <a href="penned-thoughts.html">
-                    <div class="cards">
-                        <div class="info">
-                            <h1 class="title">Penned Thoughts</h1>
-                            <h1 class="sub-title">Thu, 17 Nov 2022</h1>
-                        </div>
-
-                        <div class="photo">
-                            <img src="images/IMG_3008.jpg" alt="">
-                        </div>
+                    <div> 
+                        <a href=""><i class="fas fa-long-arrow-alt-right fa-2x" id="icon-link"></i></a>
                     </div>
-                </a>
-                <!-- 2 -->
-
-                <!-- 3 -->
-                <a href="the-forbidden-tongue.html">
-                    <div class="cards">
-                        <div class="info">
-                            <h1 class="title">The Forbidden Tongue</h1>
-                            <h1 class="sub-title">Mon, 26 Dec 2022</h1>
-                        </div>
-
-                        <div class="photo">
-                            <img src="images/IMG_3273.jpg" alt="">
-                        </div>
-                    </div>
-                </a>
-                <!-- 3 -->
-
-
+                </div>
             </div>
+
+            <!-- 2 -->
+            <div class="list"> 
+                <div class="list-image">
+                    <img src="images/IMG_0092.jpeg" alt="Blog Image">
+                </div>
+
+                <div class="blog-details">
+                    <div class="titledate">
+                        <div class="list-title">Penned Thoughts</div>
+                    </div>
+                    <div> 
+                        <a href=""><i class="fas fa-long-arrow-alt-right fa-2x" id="icon-link"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="list"> 
+                <div class="list-image">
+                    <img src="images/IMG_3442.jpg" alt="Blog Image">
+                </div>
+
+                <div class="blog-details">
+                    <div class="titledate">
+                        <div class="list-title">Incidence</div>
+                    </div>
+                    <div> 
+                        <a href="index.html"><i class="fas fa-long-arrow-alt-right fa-2x" id="icon-link"></i></a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-
+    
 </body>
+
+
+<script>
+    // This script is optional and handles the fading-in effect on scroll
+    document.addEventListener("DOMContentLoaded", function() {
+        const paragraphs = document.querySelectorAll(".main-content p");
+        const options = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.3
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                }
+            });
+        }, options);
+
+        paragraphs.forEach(paragraph => {
+            observer.observe(paragraph);
+        });
+    });
+</script>
+<footer>
+    <div class="copyright">
+        &copy; <span class="year"></span>
+        <img src="images/edna-type.svg" alt="Efua LogoType" class="logo">
+        All Rights Reserved.
+    </div>
+</footer>
+
 </html>

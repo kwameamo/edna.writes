@@ -7,6 +7,8 @@
 	<link rel="shortcut icon" href="images/edna-logo.png">
     <link rel="apple-touch-icon" href="images/edna-logo.png" sizes="72x72">
     <link rel="apple-touch-icon" href="images/edna-logo.png">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <title>Add Post — Edna's Diary</title>
 </head>
 <body>
@@ -47,7 +49,7 @@
 
                 <div class="input-box">
                     <label>Body</label> <br>
-                    <textarea id="paragraph-input1" name="" required="" rows="10" resize="vertical"></textarea>
+                    <div id="editor" name="" required="" rows="10" resize="vertical"></div>
                 </div>
 
                 <div class="input-box">
@@ -63,6 +65,22 @@
 	</div>
 
 </body>
+<script>
+    // Initialize Quill
+    var quill = new Quill('#editor', {
+        theme: 'snow', // Use the snow theme for a clean interface
+        placeholder: 'Write something...',
+        modules: {
+            toolbar: [
+                [{ 'header': '1' }, { 'header': '2' }],
+                ['bold', 'italic', 'underline', 'strike'],
+                [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                ['link', 'image']
+            ]
+        }
+    });
+</script>
+
 
 </html>
 
